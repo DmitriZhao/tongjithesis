@@ -144,7 +144,7 @@
 \newtheorem{conjecture}{猜想}[chapter]
 
 %%% bibliographies %%%
-\RequirePackage[backend=biber,style=gb7714-2015,gbpub=false]{biblatex}
+\RequirePackage[backend=biber,style=gb7714-2015,gbpub=false,sortcites,natbib=true,sorting=none]{biblatex}
 \renewcommand{\citet}[1]{\textcite{#1}}
 
 %%% glutter %%%
@@ -290,7 +290,7 @@
 
 %%% code listing %%%
 \RequirePackage{xcolor}
-\RequirePackage[chapter]{minted}	% listings sucks, use minted, require installation of pygmentize
+\RequirePackage[chapter,cache=false]{minted}	% listings sucks, use minted, require installation of pygmentize
 \RequirePackage{mdframed}	%achieve code box
 \mdfdefinestyle{codebox}{
 	leftmargin=3em,
@@ -440,6 +440,7 @@
 	\zihao{-3}\oldtabular[#1]
 	}{\renewcommand{\arraystretch}{1.2}\endoldtabular
 }
+\RequirePackage{ulem}
 \newcommand{\ulinecentered}[1]{\uline{\makebox[18em][c]{#1}}}
 %\newcommand{\ulinecentered}[1]{\fbox[b]{\parbox[t]{18em}{\centering #1}}}
 

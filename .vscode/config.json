@@ -1,0 +1,74 @@
+{
+    "latex-workshop.latex.magic.args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-shell-escape",
+        "%DOC%"
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-shell-escape",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "--shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ],
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xe->bib->xe->xe",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdf->bib->pdf->pdf",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ]
+}
